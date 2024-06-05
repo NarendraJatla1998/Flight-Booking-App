@@ -1,0 +1,42 @@
+<div class="row m-auto backgroundColor">
+    <app-search-flight-data [flightFilterList]="flightFilterList" (searchText)="searchFlightData($event)" (filterSelect)="filterUsingTypeandAirLines($event)"></app-search-flight-data>
+</div>
+
+<div class="row m-auto backgroundColor">
+    <div class="d-flex justify-content-center">
+        <p-table [value]="flightsData" [columns]="cols" [scrollable]="true" 
+        scrollHeight="400px" styleClass="p-datatable-gridlines"  [tableStyle]="{'width': '80rem'}">
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th *ngFor="let col of columns" [pSortableColumn]="col?.pSortableColumn">{{col.header}}<p-sortIcon
+                            *ngIf="col?.pSortableColumn" [field]="col?.field"></p-sortIcon></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-user>
+                <tr>
+                    <td>{{user?.airline}}</td>
+                    <td>{{user?.aircraft}}</td>
+                    <td>{{user?.arrivalTime}}</td>
+                    <td>{{user?.departureTime }}</td>
+                    <td>{{user?.destination}}</td>
+                    <td>{{user?.price}}</td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr *ngIf="!flightsData?.length">
+                    <td colspan="7">
+                        <div class="row m-auto">
+                            <div class="col-12 d-flex justify-content-center">
+                                <img class="no-records-image"
+                                src="../../../assets/No-records-found.jpg"
+                                alt="No Data"
+                              />
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+</div>

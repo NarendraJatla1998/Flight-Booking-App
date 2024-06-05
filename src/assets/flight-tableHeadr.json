@@ -1,0 +1,32 @@
+[
+    {
+        "filed" : "airline",
+        "header": "Air Line",
+        "pSortableColumn": ""
+    },
+    {
+        "filed" : "aircraft",
+        "header": "Air Craft",
+        "pSortableColumn": ""
+    },
+    {
+        "filed" : "arrivalTime",
+        "header": "Arrival Time",
+        "pSortableColumn": ""
+    },
+    {
+        "filed" : "departureTime",
+        "header": "Departure Time",
+        "pSortableColumn": ""
+    },
+    {
+        "filed" : "destination",
+        "header": "Destination",
+        "pSortableColumn": ""
+    },
+    {
+        "filed" : "price",
+        "header": "Price",
+        "pSortableColumn": "price"
+    }
+]
